@@ -24,7 +24,7 @@ The project structure is as follows:
   
 - **`modules/web/`**: Contains the configuration for creating EC2 instances.
   - `main.tf`: Defines the EC2 instance configuration.
-
+ 
 ### Example Usage of Modules
 
 In `main.tf`, the modules are invoked as follows:
@@ -41,11 +41,18 @@ module "web" {
   subnet_id = module.vpc.subnet_id
   instance_type = var.instance_type
 }
-
+```
 
 ### Key Updates:
 1. **Modules**: Adjusted the `vpc` module to include Security Groups and Subnets as part of the module.
 2. **Web Module**: Clarified that the `web` module is responsible for EC2 configuration.
 3. **Module Usage**: The example usage of modules in `main.tf` is updated to reflect the new module structure.
 4. **Branching and Merging Workflow**: Create a new branch, push changes(i.e, terraform files), and merge into the `main` branch in GitLab (best practice for production).
-5. **GitLab CI/CD Pipeline**: Define the `.gitlab-ci.yml` pipeline configuration, including stages for `init`, `plan`, and `apply`, which ensures Terraform commands are executed automatically upon merging into the `main` branch. Added the file for your reference.
+5. **GitLab CI/CD Pipeline**: Define the `.gitlab-ci.yml` pipeline configuration, including stages for `init`, `plan`, and `apply`, which ensures Terraform commands are executed automatically upon merging into the `main` branch. Added the file for your reference. 
+
+
+
+
+
+
+
